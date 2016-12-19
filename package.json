@@ -1,0 +1,24 @@
+{
+  "name": "snabbdom-delayed-class",
+  "version": "0.1.0",
+  "description": "Snabbdom class module with support for delayed/on-remove class updates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tdumitrescu/snabbdom-delayed-class.git"
+  },
+  "keywords": [
+    "snabbdom",
+    "class",
+    "module"
+  ],
+  "author": "Ted Dumitrescu <webdev@cmme.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tdumitrescu/snabbdom-delayed-class/issues"
+  },
+  "homepage": "https://github.com/tdumitrescu/snabbdom-delayed-class#readme"
+}
