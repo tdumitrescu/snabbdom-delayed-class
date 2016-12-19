@@ -1,12 +1,12 @@
-import requestAnimationFrame from 'raf';
+var raf = (typeof requestAnimationFrame !== 'undefined' && requestAnimationFrame) || setTimeout;
 
 function addOrRemoveClass(el, className, add) {
   el.classList[add ? 'add' : 'remove'](className);
 }
 
 function nextFrame(fn) {
-  requestAnimationFrame(function() {
-    requestAnimationFrame(fn);
+  raf(function() {
+    raf(fn);
   });
 }
 
