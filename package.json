@@ -25,6 +25,7 @@
     "expect.js": "^0.3.1",
     "html-element": "^2.2.0",
     "mocha": "^3.2.0",
+    "raf": "^3.3.0",
     "snabbdom": "^0.5.4"
   }
 }
