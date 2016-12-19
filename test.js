@@ -1,6 +1,5 @@
-require('html-element/global-shim');
-
 var delayedClass = require('.');
+var document = require('html-element').document;
 var expect = require('expect.js');
 var h = require('snabbdom/h');
 var snabbdom = require('snabbdom');
