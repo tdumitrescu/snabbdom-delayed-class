@@ -4,7 +4,7 @@
   "description": "Snabbdom class module with support for delayed/on-remove class updates",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/tdumitrescu/snabbdom-delayed-class#readme",
   "devDependencies": {
     "expect.js": "^0.3.1",
+    "html-element": "^2.2.0",
     "mocha": "^3.2.0",
     "snabbdom": "^0.5.4"
   }
