@@ -1,5 +1,6 @@
+require('html-element/global-shim');
+
 var delayedClass = require('.');
-var document = require('html-element').document;
 var expect = require('expect.js');
 var h = require('snabbdom/h');
 var raf = require('raf');
@@ -42,7 +43,7 @@ describe('delayed-class module', function() {
     expect(el.outerHTML).to.contain('<div>');
   });
 
-  it('applies delayed class updates in the next frame', function(done) {
+  it('applies "delayed" class updates in the next frame', function(done) {
     el = patch(el, h('div', {class: {delayed: {'foo': true}}})).elm;
     expect(el.classList.contains('foo')).not.to.be.ok();
 
@@ -52,5 +53,32 @@ describe('delayed-class module', function() {
         done();
       });
     });
+  });
+
+  it('applies "remove" class updates when removing element', function() {
+    vnode = patch(el, h('div', [
+      h('div', {class: {remove: {'foo': true}}}),
+    ]));
+    el = vnode.elm.childNodes[0];
+    expect(el.classList.contains('foo')).not.to.be.ok();
+
+    patch(vnode, h('div'));
+    expect(el.classList.contains('foo')).to.be.ok();
+  });
+
+  it('does not remove element until after "delayRemove" ms', function(done) {
+    vnode = patch(el, h('div', [
+      h('div', {class: {remove: {'foo': true, delayRemove: 250}}}),
+    ]));
+    el = vnode.elm;
+
+    patch(vnode, h('div'));
+    expect(el.childNodes).to.have.length(1);
+    expect(el.innerHTML).to.contain('<div class="foo">');
+    setTimeout(function() {
+      expect(el.childNodes).to.be.empty();
+      expect(el.innerHTML).to.be.empty();
+      done();
+    }, 500);
   });
 });
