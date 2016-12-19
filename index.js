@@ -95,9 +95,9 @@ function applyRemoveClass(vnode, rmFunc) {
   setTimeout(rmFunc, delayRemove);
 }
 
-export default {
-  create: updateClass,
-  update: updateClass,
+module.exports = {
+  create:  updateClass,
+  update:  updateClass,
   destroy: applyDestroyClass,
-  remove: applyRemoveClass,
+  remove:  applyRemoveClass,
 };
