@@ -2,7 +2,9 @@
 
 Replacement module for [Snabbdom's core `class` module](https://github.com/snabbdom/snabbdom#the-class-module). It is backwards-compatible with the existing module, but adds functionality for delaying class updates and updating classes before removing elements, similar to [the core `style` module](https://github.com/snabbdom/snabbdom#delayed-properties). These capabilities are useful for constructing animations using CSS classes/stylesheets, instead of inline styles.
 
-## Usage
+## Installation/usage
+
+Install package: `npm install --save snabbdom-delayed-class`
 
 Import/require `snabbdom-delayed-class` and pass it to `snabbdom.init()` instead of the core `class` module:
 ```js
