@@ -1,6 +1,6 @@
 {
   "name": "snabbdom-delayed-class",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Snabbdom class module with support for delayed/on-remove class updates",
   "main": "index.js",
   "scripts": {
