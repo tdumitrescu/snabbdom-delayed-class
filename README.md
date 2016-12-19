@@ -27,7 +27,15 @@ h('div', {class: {
 
 ### Set classes on remove/destroy
 
-TODO
+Class changes under `remove` are applied when the element is about to be removed from the DOM. The `delayRemove` property specifies the number of milliseconds to wait before removing the element (to permit any CSS transitions or animations to finish):
+```js
+h('div', {class: {
+  fadedout: false,
+  remove: {fadedout: true, delayRemove: 300},
+}, 'Fading out');
+```
+
+The `destroy` property works similarly but has no `delayRemove` property; it is assumed that removal delay will be managed by the ancestor node whose removal caused the `destroy` call on descendents.
 
 ## Local development
 
